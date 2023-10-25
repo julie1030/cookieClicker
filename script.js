@@ -1,52 +1,90 @@
 var buttonClick = document.getElementById("buttonClick")
-
-
 var scoreView = document.getElementById("scoreView")
 var multiplyView = document.getElementById("multiplierView")
 
+const multiplier2 = document.getElementById("multiplier2");
+const multiplier5= document.getElementById("multiplier5");
+const multiplier10 = document.getElementById("multiplier10");
+const multiplier30 = document.getElementById("multiplier30");
+
+const price2 = document.getElementById("price2");
+const price5 = document.getElementById("price5");
+const price10 = document.getElementById("price10");
+const price30 = document.getElementById("price30");
+
+const register = []
 
 const rules = [
-  { multi: 1, price: 30 },
-  { multi: 2, price: 100 },
-  { multi: 5, price: 500 },
-  { multi: 10, price: 1000 },
-  { multi: 30, price: 100000 },
+  { multi: 2, price: 30 },
+  { multi: 5, price: 100 },
+  { multi: 10, price: 500 },
+  { multi: 20, price: 10000 }
 ]
-  
-var score = 0;
-var currentIndex = 0;
-
 
 let score = 0
-let autoclicks = 0
-var currentIndex = 0
+let lastMultiplier
 
-function display() {
+function getIncrease () {
+// le score augmente apres chaque achat sans perdre les achats précédents
+  let total = 1
+  register.forEach(value => total *= value)
+
+  return total
+}
+
+function getPrice (multiplier) {
+  // le prix augmente a chaque achat d'un meme multiplier
+  const priceIncrease = register.filter(value => {
+  return value === multiplier
+  }).length || 0
+
+  // on cherche le prix du multiplier dans les rules
+  const rule = rules.find(rule => rule.multi === multiplier)
+
+  // prix calculé: on multiplie le prix de base par le nombre d'achats précédents
+  const currentPrice = rule?.price * (priceIncrease + 1) || 0
+
+  return currentPrice
+}
+
+function updateDisplay() {
   scoreView.textContent = score
-  multiplyView.textContent = `Multiply x${rules[currentIndex].multi}`
+  multiplyView.textContent = `Multiply ${getIncrease()}`
+
+  // logiaue pour activer les boutons
+  multiplier2.disabled = score < getPrice(2)
+  multiplier5.disabled = score < getPrice(5)
+  multiplier10.disabled = score < getPrice(10)
+  multiplier30.disabled = score < getPrice(30)
+
+  // affichage des prix
+  price2.textContent = getPrice(2)
+  price5.textContent = getPrice(5)
+  price10.textContent = getPrice(10)
+  price30.textContent = getPrice(30)
 }
 
 var increaseScore = function () {
-  score = score + rules[currentIndex].multi
-  display()
+  score = score + getIncrease()
+  updateDisplay()
 }
 
-function multiplier() {
-  const currentPrice = rules[currentIndex].price
-
+function buyMultiplier(multiplier) {
+  const currentPrice = getPrice(multiplier)
+  // si on a les moyens, acheter un multiplier
   if (score >= currentPrice) {
-    currentIndex += 1
+    // on veut garder une trace de chaque achat
+    register.push(multiplier)
     score = score - currentPrice
-    display()
+    lastMultiplier = multiplier
   }
+  updateDisplay()
 }
 
-display()
-
-
+// Affichage initial
+updateDisplay()
 
 buttonClick.addEventListener("click", increaseScore)
-// multiplyButton.addEventListener("click", multiplier);
 
 
 let bonusActive = false
@@ -105,7 +143,7 @@ function acheterAutoClick() {
   if (score >= coutAutoClickActuel) {
     score -= coutAutoClickActuel;
     autoclicks++;
-    const autoclickPriceElement = document.getElementById("autoclickPrice");
+    const autoclickPriceElement = document.getElementById("autoClickButton");
     autoclickPriceElement.textContent = (coutAutoClickActuel + 10) + " punaises";
     updateAutoclickCount();
     updateScore();
@@ -117,16 +155,12 @@ function acheterAutoClick() {
 
 const autoClickButton = document.getElementById("autoClickButton")
 autoClickButton.addEventListener("click", acheterAutoClick)
+multiplier2.addEventListener("click", () => buyMultiplier(2));
+multiplier5.addEventListener("click", () => buyMultiplier(5));
+multiplier10.addEventListener("click", () => buyMultiplier(10));
+multiplier30.addEventListener("click", () => buyMultiplier(30));
 
-const multiplier2 = document.getElementById("multiplier2");
-const multiplier5= document.getElementById("multiplier5");
-const multiplier10 = document.getElementById("multiplier10");
-const multiplier30 = document.getElementById("multiplier30");
 const Bonus = document.getElementById("bonusButton")
-multiplier2.addEventListener("click", () => multiplier(2));
-multiplier5.addEventListener("click", () => multiplier(5));
-multiplier10.addEventListener("click", () => multiplier(10));
-multiplier30.addEventListener("click", () => multiplier(30));
 
 Bonus.addEventListener("click", () => activateBonus(purchaseBonus()))
 
