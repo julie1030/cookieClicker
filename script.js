@@ -13,7 +13,6 @@ const rules = [
 ]
   
 var score = 0;
-let autoclicks = 0;
 var currentIndex = 0;
 
 function display () {
@@ -69,6 +68,9 @@ function purchaseBonus() {
   }
 }
 
+let autoclicks = 0;
+let coutDeBaseAutoClick = 10;
+
 function autoclick() {
   score += autoclicks; 
   updateScore(); 
@@ -82,10 +84,12 @@ function updateScore() {
 }
 
 function acheterAutoClick() {
-  const prixAutoClick = 10; 
-  if (score >= prixAutoClick) {
-    score -= prixAutoClick;
+  const coutAutoClickActuel = coutDeBaseAutoClick + (10 * autoclicks); // Coût de l'auto-click actuel
+  if (score >= coutAutoClickActuel) {
+    score -= coutAutoClickActuel;
     autoclicks++;
+    const autoclickPriceElement = document.getElementById("autoclickPrice");
+    autoclickPriceElement.textContent = (coutAutoClickActuel + 10) + " punaises"; // Mise à jour du texte avec le nouveau prix
     updateAutoclickCount();
     updateScore();
   } else {
