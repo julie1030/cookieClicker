@@ -1,7 +1,9 @@
 var buttonClick = document.getElementById("buttonClick")
 
+
 var scoreView = document.getElementById("scoreView")
 var multiplyView = document.getElementById("multiplierView")
+
 
 const rules = [
   { multi: 1, price: 30 },
@@ -41,8 +43,11 @@ function multiplier() {
 
 display()
 
+
+
 buttonClick.addEventListener("click", increaseScore)
 // multiplyButton.addEventListener("click", multiplier);
+
 
 let bonusActive = false
 const bonusCost = 200 // Coût du bonus
@@ -82,6 +87,7 @@ function purchaseBonus() {
 let autoclicks = 0;
 let coutDeBaseAutoClick = 10;
 
+
 function autoclick() {
   score += autoclicks
   updateScore()
@@ -95,14 +101,15 @@ function updateScore() {
 }
 
 function acheterAutoClick() {
-  const coutAutoClickActuel = coutDeBaseAutoClick + (10 * autoclicks); // Coût de l'auto-click actuel
+  const coutAutoClickActuel = coutDeBaseAutoClick + (10 * autoclicks);
   if (score >= coutAutoClickActuel) {
     score -= coutAutoClickActuel;
     autoclicks++;
     const autoclickPriceElement = document.getElementById("autoclickPrice");
-    autoclickPriceElement.textContent = (coutAutoClickActuel + 10) + " punaises"; // Mise à jour du texte avec le nouveau prix
+    autoclickPriceElement.textContent = (coutAutoClickActuel + 10) + " punaises";
     updateAutoclickCount();
     updateScore();
+    alert("Vous avez acheté un auto-clic")
   } else {
     alert("Vous n'avez pas assez d'argent.")
   }
@@ -111,18 +118,20 @@ function acheterAutoClick() {
 const autoClickButton = document.getElementById("autoClickButton")
 autoClickButton.addEventListener("click", acheterAutoClick)
 
-const multiplier2 = document.getElementById("multiplier2")
-const multiplier5 = document.getElementById("multiplier5")
-const multiplier10 = document.getElementById("multiplier10")
-const multiplier30 = document.getElementById("multiplier30")
+const multiplier2 = document.getElementById("multiplier2");
+const multiplier5= document.getElementById("multiplier5");
+const multiplier10 = document.getElementById("multiplier10");
+const multiplier30 = document.getElementById("multiplier30");
 const Bonus = document.getElementById("bonusButton")
-multiplier2.addEventListener("click", () => multiplier(2))
-multiplier5.addEventListener("click", () => multiplier(5))
-multiplier10.addEventListener("click", () => multiplier(10))
-multiplier30.addEventListener("click", () => multiplier(30))
+multiplier2.addEventListener("click", () => multiplier(2));
+multiplier5.addEventListener("click", () => multiplier(5));
+multiplier10.addEventListener("click", () => multiplier(10));
+multiplier30.addEventListener("click", () => multiplier(30));
+
 Bonus.addEventListener("click", () => activateBonus(purchaseBonus()))
 
 function updateAutoclickCount() {
   const autoclickCount = document.getElementById("autoclickCount")
   autoclickCount.textContent = "Nombre d'autoclicks : " + autoclicks
 }
+
