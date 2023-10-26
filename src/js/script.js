@@ -99,10 +99,10 @@ const bonusDuration = 30; // Durée du bonus en secondes
 
 // Cette fonction doit être appelée lorsqu'un bouton est activé
 function activateBonus() {
-  activerBonus();
+  acheterBonus();
 }
 function activerBonus(
-  bonusBoutton,
+  Bonus,
   coutBonus,
   dureeBonus,
   elementPoints,
@@ -110,15 +110,15 @@ function activerBonus(
 ) {
   if (score >= coutBonus) {
     score -= coutBonus;
-    bonusBouton.disabled = true;
+    Bonus.disabled = true;
     bonusActif = true;
     setTimeout(() => {
       bonusActif = false;
-      bonusBouton.disabled = false;
+      Bonus.disabled = false;
     }, dureeBonus * 1000);
     mettreAJourScore(score, elementPoints);
   } else {
-    bonusBouton.disabled = true;
+    Bonus.disabled = true;
   }
 }
 
@@ -133,10 +133,8 @@ function mettreAJourScore(score, elementPoints) {
   }, 1000);
 }
 function acheterBonus() {
-  const boutonBonus = document.getElementById("bonusButton");
   const elementPoints = document.getElementById("points"); // Supposons que elementPoints soit l'élément où le score est affiché
-
-  activerBonus(bouttonBonus, coutBonus, dureeBonus, score, elementPoints);
+  activerBonus(Bonus, coutBonus, dureeBonus, score, elementPoints);
 }
 
 let autoclicks = 0;
