@@ -1,4 +1,5 @@
 const path = require('path')
+const { resolve } = require('path')
 
 const root = resolve(__dirname, 'src')
 
