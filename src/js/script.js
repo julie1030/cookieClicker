@@ -172,7 +172,7 @@ autoClickButton.addEventListener("click", acheterAutoClick);
 multiplier2.addEventListener("click", () => buyMultiplier(2));
 multiplier5.addEventListener("click", () => buyMultiplier(5));
 multiplier10.addEventListener("click", () => buyMultiplier(10));
-multiplier30.addEventListener("click", () => buyMultiplier(30));
+multiplier20.addEventListener("click", () => buyMultiplier(20));
 
 const Bonus = document.getElementById("bonusButton");
 

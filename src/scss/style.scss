@@ -1,93 +1,81 @@
 // Import all of Bootstrap's CSS
 @import "bootstrap/scss/bootstrap";
 
-// body {
-//     margin: 20%;
-//     justify-content: center;
-//     text-align: center;
-//     background-color: black;
-//     color: bisque;
-//     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-// }
 
-// h1 {
-//     color: goldenrod;
-//     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-//     font-style: italic;
-//     font-size: x-large;
-// }
+body{
+    background-color: rgb(218, 172, 89);
+    
+}
+.box1 {
+    background-color: rgb(249, 215, 46);
+    border-radius:15px;
+    border: black solid 3px;
+    text-align:left;
+    padding:10px;
+    margin:2rem;
+    height: 90vh;
+}
 
-// #scoreView {
-//     color: yellow;
-//     background-color: red;
-//     background-size: contain;
-//     font-weight: bold;
-//     font-size: 40px;
-// }
+h1 {
+    font-family:Verdana, Geneva, Tahoma, sans-serif ;
+    color: #f70505;
+    font-weight: 900;
+    text-align: left;
+}
+.reset{
+    border:grey solid 0.8px;
+    border-radius: 15px;
+    height: 2rem;
+    color: yellow;
+    font-weight: bold;
+    background-color: blue;
+}
+.clicker {
+    border: none;
+    padding: 0;
+    border-radius: 50%;
 
-// #buttonClick {
+    img {
+        width: 100%;
+        border-radius: 50%;
+        border: solid white thin;
+    }
 
-//     width: 150px;
-//     height: 150px;
-//     border: solid 5px;
-//     border-color: rgb(252, 235, 2);
-//     border-radius: 150px;
-//     color: rgb(87, 25, 25);
-//     font-weight: bold;
-//     text-align: center;
-//     vertical-align: middle;
-//     /* background-image: url(punaiselit.jpg); */
-//     background-position: 0%;
-// }
+    &:active {
+        transform: scale(95%);
+    }
 
+}
+.statement{
+    font-style: italic;
+    font-weight: 600;
+}
 
-// #multiplierView {
-//     border: solid 5px;
-//     height: 30px;
-//     border-color: rgb(248, 130, 13);
-//     /* border-radius: 30px; */
-//     color: rgb(244, 206, 52);
-//     background-color: blueviolet;
-//     font-weight: bold;
-//     text-align: center;
-//     vertical-align: middle;
-//     margin-left: 3rem;
-// }
+.buttons{
+    border:solid rgb(250, 70, 70) 2px;
+    color:blue;
+    background: transparent;
+    width:4rem;
+}
+.count{
+    color:blue;
+    font-size: 60px;
+    font-weight: bold;
 
-// table {
-//     display: flex;
-//     justify-content: center;
-//     margin-top: 3rem;
-//     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-// }
-
-// .entete {
-//     color: bisque;
-//     border: 2px solid orange;
-//     background-color: rgb(57, 51, 51);
-// }
-
-// .t1 {
-//     color: rgb(40, 29, 29);
-//     background-color: rgb(246, 67, 222);
-// }
-
-// .t2 {
-//     color: rgb(40, 29, 29);
-//     background-color: rgb(26, 136, 246);
-// }
-
-// .t3 {
-//     color: rgb(40, 29, 29);
-//     background-color: rgb(82, 243, 13);
-// }
-
-// .t4 {
-//     color: rgb(9, 9, 9);
-//     background-color: rgb(248, 204, 7);
-// }
-
-// .t5 {
-//     color: rgb(9, 9, 9);
-//     background-color: rgb(248, 7, 7);
-// }
+}
+#bonusButton {
+    color:#f70505;
+    font-weight: bold;
+    border: solid black 2px;
+    background: transparent;
+    font: size 12px;
+    width: 5rem;
+}
+#autoClickButton {
+    color:#f70505;
+    font-weight: bold;
+    border: solid black 2px;
+    background: transparent;
+    font: size 12px;
+    width: 5rem;
+}

@@ -1,82 +1,97 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link href="style.scss" rel="stylesheet" />
-    <script defer type="module" src="js/script.js"></script>
-    <title>cookieClicker</title>
-  </head>
 
-  <body>
-    <h1>Bed bugs clicker</h1>
-    <p id="scoreView">0</p>
-    <section class="row">
-      <button id="buttonClick">Click on me!</button>
-      <div id="multiplierView"></div>
-    </section>
-    <p id="autoclickCount">Nombre d'autoclicks : 0</p>
-    <table>
-      <tr class="entete">
-        <td>Niveau</td>
-        <td>Mon élevage de punaises de lit</td>
-        <td>Sacrifice</td>
-      </tr>
-      <tr class="t1">
-        <td>Croissance</td>
-        <td>
-          Ton élevage de punaises de lit est multiplié par 2 à chaque clic
-        </td>
-        <td>
-          30 punaises <span id="price2"></span>
-          <button id="multiplier2" disabled>x 2</button>
-        </td>
-      </tr>
-      <tr class="t2">
-        <td>Ponte</td>
-        <td>
-          Période de reproduction : la ponte d'oeufs de punaises te permet de
-          multiplier par 10 ton élevage
-        </td>
-        <td>
-          100 punaises <span id="price5"></span>
-          <button id="multiplier5" disabled>x 5</button>
-        </td>
-      </tr>
-      <tr class="t3">
-        <td>Sérum de croissance</td>
-        <td>
-          Phase de croissance exponentielle, l'élevage est multiplié par 30 à
-          chaque clic
-        </td>
-        <td>
-          500 punaises <span id="price10"></span>
-          <button id="multiplier10" disabled>x 10</button>
-        </td>
-      </tr>
-      <tr class="t4">
-        <td>Colonisation</td>
-        <td>
-          C'est la colonisation du lit, l'élevage est multiplié par 1000 à
-          chaque clic
-        </td>
-        <td>
-          1000 punaises <span id="price30"></span>
-          <button id="multiplier30" disabled>x 30</button>
-        </td>
-      </tr>
-      <tr class="t5">
-        <td>Auto-click</td>
-        <td>auto click en plus</td>
-        <td>10 punaises</td>
-        <td><button id="autoClickButton">Auto-click</button></td>
-      </tr>
-      <tr class="t6">
-        <td>Bonus 200%</td>
-        <td>Bonus 200% pendant 30 secondes</td>
-        <td>200 punaises</td>
-        <td><button id="bonusButton">Bonus Temporaire</button></td>
-      </tr>
-    </table>
-  </body>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="style.scss" rel="stylesheet" />
+  <script defer type="module" src="js/script.js"></script>
+  <title>cookieClicker</title>
+</head>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="style.scss" rel="stylesheet" />
+  <script defer type="module" src="js/script.js"></script>
+  <title>cookieClicker</title>
+</head>
+
+<body>
+  <div class="box1">
+    <!-- première fenêtre affichant les règles du jeu -->
+    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+      <strong>Bienvenue sur Bed bugs city</strong>Une petite punaise de lit s'est installée dans la chambre. Aidez-la à
+      grandir et à se reproduire.
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+    <!-- en haut de gauche à droite : bouton reset, user profile, info permettant de revenir à l'alerte initiale des règles du jeu -->
+    <div class="container text-center">
+      <nav class="nav">
+        <button class="reset">Reset</button>
+        <a class="nav-link" href="#">Link</a>
+      </nav>
+      <div class="row">
+        <div class="col-8">
+
+          <div class="row">
+            <div class="col-6 col-md-6 titre">
+              <div class="row">
+                <h1>BED BUGS <br><em>City</em></h1>
+              </div>
+              <div class="row">
+                <!-- Visibilité de l'état du multiplicateur  -->
+                <div id="multiplierView" class="statement"></div>
+              </div>
+              <!-- punaise sur laquelle on clique -->
+            </div>
+            <div class="col-6 col-md-6 clicker"> <button class="clicker" id="buttonClick"><img
+                  src="assets/bedbug smile.png" alt=""></button>
+            </div>
+          </div>
+
+          <div class="row">
+            <!-- //espace avec les boutons multiplicateurs -->
+            <div>
+              <!-- multi x2 -->
+              <button id="multiplier2" class="buttons" disabled>
+                x 2
+                <p><span id="price2">30 bb</span></p>
+              </button>
+              <!-- multi x5 -->
+              <button id="multiplier5" class="buttons" disabled>
+                x 5
+                <p> <span id="price5">100 bb</span> </p>
+              </button>
+              <!-- multi x10 -->
+              <button id="multiplier10" class="buttons" disabled>
+                x 10
+                <p> <span id="price10">500 bb</span></p>
+              </button>
+              <!-- multi x20 -->
+              <button id="multiplier20" class="buttons" disabled>
+                x 20
+                <p><span id="price20">1000 bb</span></p>
+              </button>
+            </div>
+          </div>
+
+        </div>
+        <div class="col-4">
+          <!-- compteur de punaises/points -->
+          <div class="col-sm-3 count">
+            <p id="scoreView">0</p>
+          </div>
+          <!-- boutons autoclick et 200% -->
+          <div class="col-sm-3 boost">
+            <button id="autoClickButton">Auto-click</button>
+            <p id="autoclickCount">Nombre d'autoclicks : 0</p>
+            <button id="bonusButton">200%</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+</body>
+
 </html>
