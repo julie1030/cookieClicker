@@ -1,7 +1,17 @@
 const path = require('path')
 
+const root = resolve(__dirname, 'src')
+
+
 export default {
-  root: path.resolve(__dirname, 'src'),
+  root,
+  base: '/cookieClicker/',
+    root,
+    resolve: {
+        alias: {
+            '~bootstrap': resolve(__dirname, 'node_modules/bootstrap'),
+        }
+    },
   build: {
     outDir: '../dist'
   },
