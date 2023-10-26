@@ -1,3 +1,10 @@
+
+// Import our custom CSS
+import '../scss/style.scss'
+
+// Import all of Bootstrap's JS
+import * as bootstrap from 'bootstrap'
+
 var buttonClick = document.getElementById("buttonClick")
 var scoreView = document.getElementById("scoreView")
 var multiplyView = document.getElementById("multiplierView")
@@ -22,7 +29,7 @@ const rules = [
 ]
 
 let score = 0
-let lastMultiplier
+// let lastMultiplier
 
 function getIncrease () {
 // le score augmente apres chaque achat sans perdre les achats précédents
@@ -55,13 +62,13 @@ function updateDisplay() {
   multiplier2.disabled = score < getPrice(2)
   multiplier5.disabled = score < getPrice(5)
   multiplier10.disabled = score < getPrice(10)
-  multiplier30.disabled = score < getPrice(30)
+  multiplier30.disabled = score < getPrice(20)
 
   // affichage des prix
   price2.textContent = getPrice(2)
   price5.textContent = getPrice(5)
   price10.textContent = getPrice(10)
-  price30.textContent = getPrice(30)
+  price30.textContent = getPrice(20)
 }
 
 var increaseScore = function () {
@@ -76,7 +83,7 @@ function buyMultiplier(multiplier) {
     // on veut garder une trace de chaque achat
     register.push(multiplier)
     score = score - currentPrice
-    lastMultiplier = multiplier
+    // lastMultiplier = multiplier
   }
   updateDisplay()
 }
