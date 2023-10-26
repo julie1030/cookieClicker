@@ -99,10 +99,10 @@ const bonusDuration = 30; // Durée du bonus en secondes
 
 // Cette fonction doit être appelée lorsqu'un bouton est activé
 function activateBonus() {
-  purchaseBonus();
+  activerBonus();
 }
 function activerBonus(
-  bonusBouton,
+  bonusBoutton,
   coutBonus,
   dureeBonus,
   elementPoints,
@@ -136,7 +136,7 @@ function acheterBonus() {
   const boutonBonus = document.getElementById("bonusButton");
   const elementPoints = document.getElementById("points"); // Supposons que elementPoints soit l'élément où le score est affiché
 
-  activerBonus(boutonBonus, coutBonus, dureeBonus, score, elementPoints);
+  activerBonus(bouttonBonus, coutBonus, dureeBonus, score, elementPoints);
 }
 
 let autoclicks = 0;
