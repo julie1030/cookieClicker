@@ -127,7 +127,6 @@ function setBonusTimeout() {
   }, bonusDuration * 1000);
 }
 
-function updateDisplay() {}
 
 const bonusButton = document.getElementById("bonusButton");
 bonusButton.addEventListener("click", activateBonus);
