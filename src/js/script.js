@@ -190,3 +190,22 @@ function updateAutoclickCount() {
   const autoclickCount = document.getElementById("autoclickCount");
   autoclickCount.textContent = "Nombre d'autoclicks : " + autoclicks;
 }
+
+window.onload = function() {
+  const modal = document.getElementById("myModal");
+  const closeButton = document.querySelector(".close");
+
+  modal.style.display = "block";
+
+  // Fermer la fenêtre modale lorsque l'utilisateur clique sur la croix
+  closeButton.addEventListener("click", function() {
+    modal.style.display = "none";
+  });
+
+  // Fermer la fenêtre modale lorsque l'utilisateur clique en dehors de la fenêtre modale
+  window.addEventListener("click", function(event) {
+    if (event.target == modal) {
+      modal.style.display = "none";
+    }
+  });
+};
