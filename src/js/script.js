@@ -16,7 +16,7 @@ const multiplier30 = document.getElementById("multiplier30");
 const price2 = document.getElementById("price2");
 const price5 = document.getElementById("price5");
 const price10 = document.getElementById("price10");
-const price30 = document.getElementById("price30");
+const price20 = document.getElementById("price20");
 
 const register = [];
 
@@ -62,7 +62,7 @@ function updateDisplay() {
   multiplier2.disabled = score < getPrice(2);
   multiplier5.disabled = score < getPrice(5);
   multiplier10.disabled = score < getPrice(10);
-  multiplier30.disabled = score < getPrice(20);
+  multiplier20.disabled = score < getPrice(20);
 
   // affichage des prix
   price2.textContent = getPrice(2);
@@ -172,7 +172,7 @@ autoClickButton.addEventListener("click", acheterAutoClick);
 multiplier2.addEventListener("click", () => buyMultiplier(2));
 multiplier5.addEventListener("click", () => buyMultiplier(5));
 multiplier10.addEventListener("click", () => buyMultiplier(10));
-multiplier30.addEventListener("click", () => buyMultiplier(30));
+multiplier20.addEventListener("click", () => buyMultiplier(20));
 
 const Bonus = document.getElementById("bonusButton");
 
