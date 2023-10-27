@@ -66,6 +66,12 @@ function updateDisplay() {
 
 var increaseScore = function () {
   score += getIncrease();
+
+  if (bonusActive) {
+    const scoreBonus = calculateScoreBonus();
+    score = scoreBonus
+  }
+
   updateDisplay();
 };
 
@@ -86,8 +92,8 @@ buttonClick.addEventListener("click", increaseScore);
 
 // Bonus functionality
 let bonusActive = false;
-const bonusCost = 200; // Cost of the bonus
-const bonusDuration = 30; // Duration of the bonus in seconds
+const bonusCost = 20; // Cost of the bonus
+const bonusDuration = 5000; // Duration of the bonus in milliseconds
 
 function activateBonus() {
   if (!bonusActive) {
@@ -98,8 +104,7 @@ function activateBonus() {
 }
 
 function applyScoreBonus() {
-  const scoreBonus = calculateScoreBonus();
-  if (scoreBonus >= bonusCost) {
+  if (score >= bonusCost) {
     decreaseScoreByBonusCost();
     activateBonusEffect();
     setBonusTimeout();
@@ -121,10 +126,29 @@ function activateBonusEffect() {
   bonusActive = true;
 }
 
+let timerCount = bonusDuration / 1000; // timeout du bonus (milliseconds to seconds)
 function setBonusTimeout() {
+
+  const stopBonus = () => {
+    clearInterval(interval)
+  }
+
+  const interval = setInterval(() => {
+    if (timerCount === 0) {
+      document.getElementById("timer").textContent = 0
+
+      timerCount = bonusDuration / 1000;
+      stopBonus()
+    }
+    else {
+      document.getElementById("timer").textContent = timerCount
+      timerCount--;
+    }
+  }, 1000)
+
   setTimeout(() => {
     bonusActive = false;
-  }, bonusDuration * 1000);
+  }, bonusDuration);
 }
 
 
