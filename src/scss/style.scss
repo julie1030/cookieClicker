@@ -52,20 +52,42 @@ h1 {
     font-weight: 600;
 }
 
+.row{
+   padding-top: 10%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content:center; 
+    
+}
 .buttons{
-    color:blue;
+    color:rgb(80, 48, 14);
     background: transparent;
-    width:4rem;
+    font-weight: bold;
+    font-size: 22px;
+    width:80px;
+    height: 80px;
 
     &:not(:disabled) {
         border:solid rgb(250, 70, 70) 2px;
     }
 }
+.col-4{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 .count{
     color:blue;
-    font-size: 60px;
+    font-size: 30px;
     font-weight: bold;
 
+}
+.bleuGrasPetit{
+
+    font-weight: bold;
+    font-size: 10px;
+    color: blue;
 }
 #bonusButton {
     color:#f70505;

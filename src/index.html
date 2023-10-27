@@ -12,11 +12,10 @@
 <body>
   <div class="box1">
     <!-- première fenêtre affichant les règles du jeu -->
-    <div class="alert alert-warning alert-dismissible fade show" role="alert">
-      <strong>Bienvenue sur Bed bugs city</strong>Une petite punaise de lit s'est installée dans la chambre. Aidez-la à
-      grandir et à se reproduire.
-      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-    </div>
+
+
+
+
     <!-- en haut de gauche à droite : bouton reset, user profile, info permettant de revenir à l'alerte initiale des règles du jeu -->
     <div class="container text-center">
       <nav class="nav">
@@ -48,41 +47,41 @@
               <!-- multi x2 -->
               <button id="multiplier2" class="buttons" disabled>
                 x 2
-                <p><span id="price2">30 bb</span></p>
+                <p class="bleuGrasPetit"><span id="price2"><em>Price:</em><br>30 bb</span></p>
               </button>
               <!-- multi x5 -->
               <button id="multiplier5" class="buttons" disabled>
                 x 5
-                <p> <span id="price5">100 bb</span> </p>
+                <p class="bleuGrasPetit"> <span id="price5"><em>Price:</em><br>100 bb</span> </p>
               </button>
               <!-- multi x10 -->
               <button id="multiplier10" class="buttons" disabled>
                 x 10
-                <p> <span id="price10">500 bb</span></p>
+                <p class="bleuGrasPetit"> <span id="price10"><em>Price:</em><br>500 bb</span></p>
               </button>
               <!-- multi x20 -->
-              <button id="multiplier20" class="buttons" disabled>
+              <button id="multiplier30" class="buttons" disabled>
                 x 20
-                <p><span id="price20">1000 bb</span></p>
+                <p class="bleuGrasPetit"><span id="price30"><em>Price:</em><br>1000 bb</span></p>
               </button>
             </div>
           </div>
 
         </div>
-        <div class="col-4">
+        <div class="col">
           <!-- compteur de punaises/points -->
-          <div class="col-sm-3 count">
+          <div class="col-sm- count">
             <p id="scoreView">0</p>
+            <p class="bleuGrasPetit"><em>$ Bed bugs $</em></p>
           </div>
           <!-- boutons autoclick et 200% -->
-          <div class="col-sm-3 boost">
+          <div class="col-sm- boost">
             <button id="autoClickButton">Auto-click</button>
             <p id="autoclickCount">Nombre d'autoclicks : 0</p>
             <button id="bonusButton">200%</button>
             <span id="timer"></span>
           </div>
         </div>
-
       </div>
     </div>
 </body>
