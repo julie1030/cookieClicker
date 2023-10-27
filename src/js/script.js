@@ -170,7 +170,7 @@ function buyAutoclick() {
     score -= currentAutoclickCost;
     autoclicks++;
     const autoclickPriceElement = document.getElementById("autoclickPrice");
-    autoclickPriceElement.textContent = (baseAutoclickCost + 10) + " punaises";
+    autoclickPriceElement.textContent = (baseAutoclickCost + 10) + " bb";
     updateAutoclickCount();
     updateScore();
     alert("You have purchased an autoclick.");

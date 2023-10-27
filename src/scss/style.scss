@@ -61,6 +61,7 @@ h1 {
         border:solid rgb(250, 70, 70) 2px;
     }
 }
+
 .count{
     color:blue;
     font-size: 60px;
@@ -68,21 +69,53 @@ h1 {
 
 }
 #bonusButton {
-    color:#f70505;
-    font-weight: bold;
-    border: solid black 2px;
-    background: transparent;
-    font: size 12px;
-    width: 5rem;
+    text-decoration: none;
+    padding: 15px;
+    font-family: verdana;
+    font-size: 1em;
+    color: rgb(249,215,46);
+    background-color: rgb(218,172,89);
+    border-radius: 25px;
+    -webkit-border-radius: 25px;
+    -moz-border-radius: 25px;
+    border: 4px solid rgb(249,215,46);
+    box-shadow: 3px 3px 12px #444444;
+    -webkit-box-shadow: 3px 3px 12px #444444;
+    -moz-box-shadow: 3px 3px 12px #444444;
 }
+
+#bonusButton:hover {
+    padding: 17px;
+    border: 4px solid #FFFFFF;
+    box-shadow: 3px 3px 12px #777777;
+    -webkit-box-shadow: 3px 3px 12px #777777;
+    -moz-box-shadow: 3px 3px 12px #777777;
+    }
+
 #autoClickButton {
-    color:#f70505;
-    font-weight: bold;
-    border: solid black 2px;
-    background: transparent;
-    font: size 12px;
-    width: 5rem;
+    text-decoration: none;
+    padding: 15px;
+    font-family: verdana;
+    font-size: 1em;
+    color: rgb(249,215,46);
+    background-color: rgb(218,172,89);
+    border-radius: 25px;
+    -webkit-border-radius: 25px;
+    -moz-border-radius: 25px;
+    border: 4px solid rgb(249,215,46);
+    box-shadow: 3px 3px 12px #444444;
+    -webkit-box-shadow: 3px 3px 12px #444444;
+    -moz-box-shadow: 3px 3px 12px #444444;
 }
+
+#autoClickButton:hover {
+    padding: 17px;
+    border: 4px solid #FFFFFF;
+    box-shadow: 3px 3px 12px #777777;
+    -webkit-box-shadow: 3px 3px 12px #777777;
+    -moz-box-shadow: 3px 3px 12px #777777;
+    }
+
 .modal {
     display: none;
     position: fixed;
