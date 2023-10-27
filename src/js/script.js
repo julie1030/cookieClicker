@@ -91,20 +91,43 @@ const bonusDuration = 30; // Duration of the bonus in seconds
 
 function activateBonus() {
   if (!bonusActive) {
-    if (score >= bonusCost) {
-      score -= bonusCost;
-      bonusActive = true;
-      setTimeout(() => {
-        bonusActive = false;
-      }, bonusDuration * 1000);
-      updateDisplay();
-    } else {
-      alert("Not enough score to activate the bonus.");
-    }
+    applyScoreBonus();
   } else {
     alert("Bonus is already active.");
   }
 }
+
+function applyScoreBonus() {
+  const scoreBonus = calculateScoreBonus();
+  if (scoreBonus >= bonusCost) {
+    decreaseScoreByBonusCost();
+    activateBonusEffect();
+    setBonusTimeout();
+    updateDisplay();
+  } else {
+    alert("Not enough score to activate the bonus.");
+  }
+}
+
+function calculateScoreBonus() {
+  return score * 2;
+}
+
+function decreaseScoreByBonusCost() {
+  score -= bonusCost;
+}
+
+function activateBonusEffect() {
+  bonusActive = true;
+}
+
+function setBonusTimeout() {
+  setTimeout(() => {
+    bonusActive = false;
+  }, bonusDuration * 1000);
+}
+
+function updateDisplay() {}
 
 const bonusButton = document.getElementById("bonusButton");
 bonusButton.addEventListener("click", activateBonus);
