@@ -180,20 +180,11 @@ function buyAutoclick() {
 const autoclickButton = document.getElementById("autoClickButton");
 autoclickButton.addEventListener("click", buyAutoclick);
 
-function updateAutoclickCount() {
-  const autoclickCount = document.getElementById("autoclickCount");
-  autoclickCount.textContent = "Autoclicks: " + autoclicks;
-}
-
 // Event listeners for multipliers
 multiplier2.addEventListener("click", () => buyMultiplier(2));
 multiplier5.addEventListener("click", () => buyMultiplier(5));
 multiplier10.addEventListener("click", () => buyMultiplier(10));
 multiplier20.addEventListener("click", () => buyMultiplier(20));
-
-const Bonus = document.getElementById("bonusButton");
-
-Bonus.addEventListener("click", () => activateBonus());
 
 function updateAutoclickCount() {
   const autoclickCount = document.getElementById("autoclickCount");
