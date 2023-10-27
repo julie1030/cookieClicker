@@ -169,6 +169,8 @@ function buyAutoclick() {
   if (score >= currentAutoclickCost) {
     score -= currentAutoclickCost;
     autoclicks++;
+    const autoclickPriceElement = document.getElementById("autoclickPrice");
+    autoclickPriceElement.textContent = (baseAutoclickCost + 10) + " punaises";
     updateAutoclickCount();
     updateScore();
     alert("You have purchased an autoclick.");
