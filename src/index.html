@@ -10,80 +10,162 @@
 </head>
 
 <body>
-  <div class="box1">
-    <!-- première fenêtre affichant les règles du jeu -->
-
-
-
-
-    <!-- en haut de gauche à droite : bouton reset, user profile, info permettant de revenir à l'alerte initiale des règles du jeu -->
-    <div class="container text-center">
-      <nav class="nav">
-        <button class="reset">Reset</button>
-        <a class="nav-link" href="#">Link</a>
-      </nav>
-      <div class="row">
-        <div class="col-8">
-
-          <div class="row">
-            <div class="col-6 col-md-6 titre">
-              <div class="row">
-                <h1>BED BUGS <br><em>City</em></h1>
-              </div>
-              <div class="row">
-                <!-- Visibilité de l'état du multiplicateur  -->
-                <div id="multiplierView" class="statement"></div>
-              </div>
-              <!-- punaise sur laquelle on clique -->
-            </div>
-            <div class="col-6 col-md-6 clicker"> <button class="clicker" id="buttonClick"><img
-                  src="assets/bedbug smile.png" alt=""></button>
-            </div>
-          </div>
-
-          <div class="row">
-            <!-- //espace avec les boutons multiplicateurs -->
-            <div>
-              <!-- multi x2 -->
-              <button id="multiplier2" class="buttons" disabled>
-                x 2
-                <p class="bleuGrasPetit"><span id="price2"><em>Price:</em><br>30 bb</span></p>
-              </button>
-              <!-- multi x5 -->
-              <button id="multiplier5" class="buttons" disabled>
-                x 5
-                <p class="bleuGrasPetit"> <span id="price5"><em>Price:</em><br>100 bb</span> </p>
-              </button>
-              <!-- multi x10 -->
-              <button id="multiplier10" class="buttons" disabled>
-                x 10
-                <p class="bleuGrasPetit"> <span id="price10"><em>Price:</em><br>500 bb</span></p>
-              </button>
-              <!-- multi x20 -->
-              <button id="multiplier30" class="buttons" disabled>
-                x 20
-                <p class="bleuGrasPetit"><span id="price30"><em>Price:</em><br>1000 bb</span></p>
-              </button>
-            </div>
-          </div>
-
-        </div>
-        <div class="col">
-          <!-- compteur de punaises/points -->
-          <div class="col-sm- count">
-            <p id="scoreView">0</p>
-            <p class="bleuGrasPetit"><em>$ Bed bugs $</em></p>
-          </div>
-          <!-- boutons autoclick et 200% -->
-          <div class="col-sm- boost">
-            <button id="autoClickButton">Auto-click</button>
-            <p id="autoclickCount">Nombre d'autoclicks : 0</p>
-            <button id="bonusButton">200%</button>
-            <span id="timer"></span>
-          </div>
-        </div>
+  <!-- <section>
+    <div id="myModal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <h1>Bienvenue dans le Bed bugs Clicker !</h2>
+          <h2>Règles du jeu :</h2>
+          <ol>
+            <li><b>Objectif :</b> L'objectif du jeu est d'accumuler autant de "punaises de lit" que possible en cliquant
+              sur le bouton "Click on me!".</li>
+            <li><b>Score initial :</b> Le score initial est de 0.</li>
+            <li><b>Multiplicateurs :</b> Vous pouvez acheter des multiplicateurs qui augmentent la quantité de "punaises
+              de lit" que vous gagnez à chaque clic.
+              Il y a plusieurs niveaux de multiplicateurs, chacun ayant un coût différent.
+              Plus vous achetez de multiplicateurs, plus votre production de "punaises de lit" augmente.</li>
+            <li><b>Autoclicks :</b> Vous pouvez également acheter des "auto clicks" qui génèrent automatiquement des
+              "punaises de lit" à intervalles réguliers.</li>
+            <li><b>Bonus temporaire :</b> Vous pouvez acheter un "Bonus 200%" qui double temporairement votre production
+              de "punaises de lit" pendant 30 secondes.</li>
+            <li><b>Coût des améliorations :</b> Les multiplicateurs, les autoclicks et les bonus ont des coûts en
+              "punaises de lit" qui augmentent à chaque achat du même type.</li>
+          </ol>
       </div>
     </div>
+  </section> -->
+  <section>
+    <div class="container box1">
+      <nav class="navbar">
+        <div class="container-fluid">
+          <div class="bleuGrasPetit m-2"><em>Bed bugs $</em></div>
+          <!-- compteur de punaises/points -->
+          <div class="count m-2" id="scoreView"></div>
+          <p class="bleuGrasPetit m-2">Rules</p>
+          <button class="reset">Reset</button>
+        </div>
+      </nav>
+
+      <div class="row container-fluid">
+
+        <div class="col-5">
+          <h1>BED BUGS <br><em>City</em></h1>
+          <div class="col-md-10">
+            <!-- Visibilité de l'état du multiplicateur  -->
+            <div id="multiplierView" class="statement m-2"></div>
+          </div>
+        </div>
+
+        <div class="col-7">
+          <!-- punaise sur laquelle on clique -->
+          <div class="col-6 col-md-6 clicker"> <button class="clicker" id="buttonClick"><img
+                src="assets/bedbug smile.png" alt=""></button>
+          </div>
+        </div>
+
+      </div>
+
+
+      <div class="container-fluid">
+        <div class="col-md-12">
+
+          <hr>
+          <!-- //espace avec les boutons multiplicateurs -->
+          <button id="multiplier2" class="buttons" disabled>
+            x 2
+            <p class="bleuGrasPetit"><span id="price2"><em>Price:</em><br>30$</span></p>
+          </button>
+
+          <button id="multiplier5" class="buttons" disabled>
+            x 5
+            <p class="bleuGrasPetit"> <span id="price5"><em>Price:</em><br>100$</span> </p>
+          </button>
+          <!-- boutons autoclick et 200% -->
+          <button id="bonusButton">200%</button>
+          <button id="autoClickButton">Acheter Auto-clic<p id="autoclickPrice">10 punaises</p></button>
+
+          <hr>
+
+          <!-- visibilité du nombre de fois où l'utilisateur a selectionné l'autoclic  -->
+          <div class="m-2" id="autoclickCount">Nombre d'autoclicks : 0</div>
+
+          <!-- visibilité du temps restant sur le timer pour le 200%-->
+          <span class="m-2">Timer bonus: <span id="timer">0</span> </span>
+
+        </div>
+
+      </div>
+    </div>
+  </section>
 </body>
 
 </html>
+
+
+
+
+
+
+
+
+
+
+
+<!-- <div class="box1"> -->
+<!-- première fenêtre affichant les règles du jeu -->
+
+<!-- en haut de gauche à droite : bouton reset, user profile, info permettant de revenir à l'alerte initiale des règles du jeu -->
+<!-- <div class="container text-center">
+
+        <div class="row">
+          <button class="reset">Reset</button>
+          <a class="nav-link" href="#">Link</a>
+          <div class="m-2" id="autoclickCount">Nombre d'autoclicks : 0</div> -->
+<!-- Visibilité de l'état du multiplicateur  -->
+<!-- <div id="multiplierView" class="statement m-2"></div>
+          <span class="m-2">Timer bonus: <span id="timer">0</span> </span> -->
+<!-- compteur de punaises/points -->
+<!-- <div class="count m-2" id="scoreView"></div>
+          <div class="bleuGrasPetit m-2"><em>$ Bed bugs $</em></div>
+        </div>
+
+        <div class="row">
+          <div class="col-6 col-md-6 titre">
+            <div class="row">
+              <h1>BED BUGS <br><em>City</em></h1>
+            </div> -->
+
+<!-- punaise sur laquelle on clique -->
+<!-- </div>
+          <div class="col-6 col-md-6 clicker"> <button class="clicker" id="buttonClick"><img
+                src="assets/bedbug smile.png" alt=""></button>
+          </div>
+        </div>
+
+
+      </div>
+      <div class="row">
+        <! //espace avec les boutons multiplicateurs -->
+<!-- multi x2 -->
+<!-- <button id="multiplier2" class="buttons" disabled>
+          x 2
+          <p class="bleuGrasPetit"><span id="price2"><em>Price:</em><br>30 bb</span></p>
+        </button> -->
+<!-- multi x5 -->
+<!-- <button id="multiplier5" class="buttons" disabled> -->
+x 5
+<!-- <p class="bleuGrasPetit"> <span id="price5"><em>Price:</em><br>100 bb</span> </p>
+        </button> -->
+<!-- multi x10 -->
+<!-- <button id="multiplier10" class="buttons" disabled> 
+          x 10
+          <p class="bleuGrasPetit"> <span id="price10"><em>Price:</em><br>500 bb</span></p>
+        </button> -->
+<!-- multi x20 -->
+<!-- <button id="multiplier20" class="buttons" disabled>
+          x 20
+          <p class="bleuGrasPetit"><span id="price20"><em>Price:</em><br>1000 bb</span></p>
+        </button> -->
+<!-- boutons autoclick et 200% -->
+<!-- <button id="autoClickButton">Auto-click</button>
+        <button id="bonusButton">200%</button> -->

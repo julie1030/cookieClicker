@@ -9,6 +9,11 @@ var buttonClick = document.getElementById("buttonClick");
 var scoreView = document.getElementById("scoreView");
 var multiplyView = document.getElementById("multiplierView");
 
+const multiplier2 = document.getElementById("multiplier2");
+const multiplier5 = document.getElementById("multiplier5");
+const multiplier10 = document.getElementById("multiplier10");
+const multiplier20 = document.getElementById("multiplier20");
+
 const price2 = document.getElementById("price2");
 const price5 = document.getElementById("price5");
 const price10 = document.getElementById("price10");
@@ -177,8 +182,29 @@ function buyAutoclick() {
   }
 }
 
+
 const autoclickButton = document.getElementById("autoClickButton");
 autoclickButton.addEventListener("click", buyAutoclick);
+
+window.onload = function() {
+  const modal = document.getElementById("myModal");
+  const closeButton = document.querySelector(".close");
+
+  modal.style.display = "block";
+
+  // Fermer la fenêtre modale lorsque l'utilisateur clique sur la croix
+  closeButton.addEventListener("click", function() {
+    modal.style.display = "none";
+  });
+
+  // Fermer la fenêtre modale lorsque l'utilisateur clique en dehors de la fenêtre modale
+  window.addEventListener("click", function(event) {
+    if (event.target == modal) {
+      modal.style.display = "none";
+    }
+  });
+};
+
 
 // Event listeners for multipliers
 multiplier2.addEventListener("click", () => buyMultiplier(2));

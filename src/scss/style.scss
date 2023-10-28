@@ -6,6 +6,10 @@ body{
     background-color: rgb(218, 172, 89);
     
 }
+.navbar{
+    background-color: rgb(244, 173, 40);
+    border-radius: 15px;
+}
 .box1 {
     background-color: rgb(249, 215, 46);
     border-radius:15px;
@@ -43,7 +47,7 @@ h1 {
     }
 
     &:active {
-        transform: scale(95%);
+        transform: scale(98%);
     }
 
 }
@@ -52,14 +56,6 @@ h1 {
     font-weight: 600;
 }
 
-.row{
-   padding-top: 10%;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content:center; 
-    
-}
 .buttons{
     color:rgb(80, 48, 14);
     background: transparent;
@@ -72,11 +68,7 @@ h1 {
         border:solid rgb(250, 70, 70) 2px;
     }
 }
-.col-4{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
+
 .count{
     color:blue;
     font-size: 30px;
@@ -89,19 +81,82 @@ h1 {
     font-size: 10px;
     color: blue;
 }
+
 #bonusButton {
-    color:#f70505;
-    font-weight: bold;
-    border: solid black 2px;
-    background: transparent;
-    font: size 12px;
-    width: 5rem;
+    color:#f70505;	    text-decoration: none;
+    font-weight: bold;	    padding: 15px;
+    border: solid black 2px;	    font-family: verdana;
+    background: transparent;	    font-size: 1em;
+    font: size 12px;	    color: rgb(249,215,46);
+    width: 5rem;	    background-color: rgb(218,172,89);
+    border-radius: 25px;
+    -webkit-border-radius: 25px;
+    -moz-border-radius: 25px;
+    border: 4px solid rgb(249,215,46);
+    box-shadow: 3px 3px 12px #444444;
+    -webkit-box-shadow: 3px 3px 12px #444444;
+    -moz-box-shadow: 3px 3px 12px #444444;
 }
-#autoClickButton {
-    color:#f70505;
-    font-weight: bold;
-    border: solid black 2px;
-    background: transparent;
-    font: size 12px;
-    width: 5rem;
+
+#bonusButton:hover {
+    padding: 17px;
+    border: 4px solid #FFFFFF;
+    box-shadow: 3px 3px 12px #777777;
+    -webkit-box-shadow: 3px 3px 12px #777777;
+    -moz-box-shadow: 3px 3px 12px #777777;
+    }
+
+#autoClickButton {	#autoClickButton {
+    color:#f70505;	    text-decoration: none;
+    font-weight: bold;	    padding: 15px;
+    border: solid black 2px;	    font-family: verdana;
+    background: transparent;	    font-size: 1em;
+    font: size 12px;	    color: rgb(249,215,46);
+    width: 5rem;	    background-color: rgb(218,172,89);
+    border-radius: 25px;
+    -webkit-border-radius: 25px;
+    -moz-border-radius: 25px;
+    border: 4px solid rgb(249,215,46);
+    box-shadow: 3px 3px 12px #444444;
+    -webkit-box-shadow: 3px 3px 12px #444444;
+    -moz-box-shadow: 3px 3px 12px #444444;
+}	}
+
+#autoClickButton:hover {
+    padding: 17px;
+    border: 4px solid #FFFFFF;
+    box-shadow: 3px 3px 12px #777777;
+    -webkit-box-shadow: 3px 3px 12px #777777;
+    -moz-box-shadow: 3px 3px 12px #777777;
 }
+
+
+ .modal {
+display: none;
+position: fixed;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color:  rgb(218, 172, 89);
+            padding: 20px;
+            border: 1px solid #ccc;
+            box-shadow: 2px 2px 10px black;
+}
+        
+.close {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 20px;
+            cursor: pointer;
+}
+        
