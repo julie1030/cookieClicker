@@ -67,30 +67,56 @@
 
 
       <div class="container-fluid">
-        <div class="col-md-12">
+        <div class="col-md-12 actions">
 
-          <hr>
-          <!-- //espace avec les boutons multiplicateurs -->
-          <button id="multiplier2" class="buttons" disabled>
-            x 2
-            <p class="bleuGrasPetit"><span id="price2"><em>Price:</em><br>30$</span></p>
-          </button>
 
-          <button id="multiplier5" class="buttons" disabled>
-            x 5
-            <p class="bleuGrasPetit"> <span id="price5"><em>Price:</em><br>100$</span> </p>
-          </button>
-          <!-- boutons autoclick et 200% -->
-          <button id="bonusButton">200%</button>
-          <button id="autoClickButton">Acheter Auto-clic<p id="autoclickPrice">10 punaises</p></button>
+          <div>
+            <button class="buttons" id="autoClickButton" disabled>
+              Auto-clic
+              <br>
+              <span class="bleuGrasPetit">
+                <span id="autoclickPrice"></span>
+                &dollar;</span>
+            </button>
 
-          <hr>
+            <!-- //espace avec les boutons multiplicateurs -->
+            <button id="multiplier2" class="buttons" disabled>
+              x 2
+              <br>
+              <span class="bleuGrasPetit">
+                <span id="price2">30</span>
+                &dollar;</span>
+            </button>
 
-          <!-- visibilité du nombre de fois où l'utilisateur a selectionné l'autoclic  -->
-          <div class="m-2" id="autoclickCount">Nombre d'autoclicks : 0</div>
+            <button id="multiplier5" class="buttons" disabled>
+              x 5
+              <br>
+              <span class="bleuGrasPetit">
+                <span id="price5">100</span>
+                &dollar;</span>
+            </button>
 
-          <!-- visibilité du temps restant sur le timer pour le 200%-->
-          <span class="m-2">Timer bonus: <span id="timer">0</span> </span>
+            <button class="buttons" id="bonusButton" disabled>
+              200 %
+              <br>
+              <span class="bleuGrasPetit">
+                <span id="bonusPrice"></span>
+                &dollar;</span>
+            </button>
+
+
+
+          </div>
+
+          <div>
+            <!-- visibilité du nombre de fois où l'utilisateur a selectionné l'autoclic  -->
+            <div class="m-2" id="autoclickCount">Nombre d'autoclicks : 0</div>
+
+            <!-- visibilité du temps restant sur le timer pour le 200%-->
+            <span class="m-2">Timer bonus: <span id="timer">0</span> </span>
+          </div>
+
+
 
         </div>
 
@@ -100,72 +126,3 @@
 </body>
 
 </html>
-
-
-
-
-
-
-
-
-
-
-
-<!-- <div class="box1"> -->
-<!-- première fenêtre affichant les règles du jeu -->
-
-<!-- en haut de gauche à droite : bouton reset, user profile, info permettant de revenir à l'alerte initiale des règles du jeu -->
-<!-- <div class="container text-center">
-
-        <div class="row">
-          <button class="reset">Reset</button>
-          <a class="nav-link" href="#">Link</a>
-          <div class="m-2" id="autoclickCount">Nombre d'autoclicks : 0</div> -->
-<!-- Visibilité de l'état du multiplicateur  -->
-<!-- <div id="multiplierView" class="statement m-2"></div>
-          <span class="m-2">Timer bonus: <span id="timer">0</span> </span> -->
-<!-- compteur de punaises/points -->
-<!-- <div class="count m-2" id="scoreView"></div>
-          <div class="bleuGrasPetit m-2"><em>$ Bed bugs $</em></div>
-        </div>
-
-        <div class="row">
-          <div class="col-6 col-md-6 titre">
-            <div class="row">
-              <h1>BED BUGS <br><em>City</em></h1>
-            </div> -->
-
-<!-- punaise sur laquelle on clique -->
-<!-- </div>
-          <div class="col-6 col-md-6 clicker"> <button class="clicker" id="buttonClick"><img
-                src="assets/bedbug smile.png" alt=""></button>
-          </div>
-        </div>
-
-
-      </div>
-      <div class="row">
-        <! //espace avec les boutons multiplicateurs -->
-<!-- multi x2 -->
-<!-- <button id="multiplier2" class="buttons" disabled>
-          x 2
-          <p class="bleuGrasPetit"><span id="price2"><em>Price:</em><br>30 bb</span></p>
-        </button> -->
-<!-- multi x5 -->
-<!-- <button id="multiplier5" class="buttons" disabled> -->
-x 5
-<!-- <p class="bleuGrasPetit"> <span id="price5"><em>Price:</em><br>100 bb</span> </p>
-        </button> -->
-<!-- multi x10 -->
-<!-- <button id="multiplier10" class="buttons" disabled> 
-          x 10
-          <p class="bleuGrasPetit"> <span id="price10"><em>Price:</em><br>500 bb</span></p>
-        </button> -->
-<!-- multi x20 -->
-<!-- <button id="multiplier20" class="buttons" disabled>
-          x 20
-          <p class="bleuGrasPetit"><span id="price20"><em>Price:</em><br>1000 bb</span></p>
-        </button> -->
-<!-- boutons autoclick et 200% -->
-<!-- <button id="autoClickButton">Auto-click</button>
-        <button id="bonusButton">200%</button> -->
