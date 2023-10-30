@@ -184,11 +184,9 @@ background-color: rgba(0, 0, 0, 0.5);
 
     .right-col {
         padding: 2rem;
+
+        img {
+            max-height: 12rem;
+        }
     }
  }
-@media (min-width: 1024px) {
-    .right-col {
-        padding: 5rem;
-    }
- }
- 
