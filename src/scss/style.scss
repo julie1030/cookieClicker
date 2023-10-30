@@ -48,10 +48,7 @@ h3{
     background-color: blue;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
-.bug{
-    text-align: center;
-    padding-top: 5%;
-}
+
 .clicker {
     border: none;
     padding: 0;
@@ -175,6 +172,23 @@ background-color: rgba(0, 0, 0, 0.5);
             flex-direction: row;
             justify-content: center;
         }
+    }
+
+    .left-col {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .right-col {
+        padding: 2rem;
+    }
+ }
+@media (min-width: 1024px) {
+    .right-col {
+        padding: 5rem;
     }
  }
  
