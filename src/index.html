@@ -46,33 +46,34 @@
         </div>
       </nav>
 
-      <div class="row container-fluid">
+      <div class="container bug">
+        <div class="row">
+          <div class="col-sm-6 left-col">
+            <h1>BED BUGS <br><em>City</em></h1>
+            <div class="col-md-10">
+              <!-- Visibilité de l'état du multiplicateur  -->
+              <div id="multiplierView" class="statement m-2"></div>
+              <!-- visibilité du nombre de fois où l'utilisateur a selectionné l'autoclic  -->
+              <div class="m-2" id="autoclickCount">Nombre d'autoclicks : 0</div>
+              <!-- visibilité du temps restant sur le timer pour le 200%-->
+              <span class="m-2">Timer bonus: <span id="timer">0</span> </span>
+            </div>
+          </div>
 
-        <div class="col-5">
-          <h1>BED BUGS <br><em>City</em></h1>
-          <div class="col-md-10">
-            <!-- Visibilité de l'état du multiplicateur  -->
-            <div id="multiplierView" class="statement m-2"></div>
-            <!-- visibilité du nombre de fois où l'utilisateur a selectionné l'autoclic  -->
-            <div class="m-2" id="autoclickCount">Nombre d'autoclicks : 0</div>
-            <!-- visibilité du temps restant sur le timer pour le 200%-->
-            <span class="m-2">Timer bonus: <span id="timer">0</span> </span>
+          <div class="col-sm-6 right-col">
+            <!-- punaise sur laquelle on clique -->
+            <div class="clicker"> <button class="clicker" id="buttonClick"><img src="assets/bedbug smile.png"
+                  alt=""></button>
+            </div>
           </div>
         </div>
 
-        <div class="col-7">
-          <!-- punaise sur laquelle on clique -->
-          <div class="col-6 col-md-6 clicker"> <button class="clicker" id="buttonClick"><img
-                src="assets/bedbug smile.png" alt=""></button>
-          </div>
-        </div>
+
 
       </div>
 
-
       <div class="container-fluid">
         <div class="col-md-12 actions">
-
 
           <div>
             <button class="buttons" id="autoClickButton" disabled>
