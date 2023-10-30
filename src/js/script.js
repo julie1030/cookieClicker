@@ -21,7 +21,7 @@ const bonusPrice = document.getElementById("bonusPrice");
 const autoclickPrice = document.getElementById("autoclickPrice");
 
 // Register to keep track of purchases
-const register = [];
+let register = [];
 
 // Rules for multipliers and their prices
 const rules = [
@@ -159,7 +159,7 @@ bonusButton.addEventListener("click", activateBonus);
 
 // Autoclick functionality
 let autoclicks = 0;
-let baseAutoclickCost = 10;
+const baseAutoclickCost = 10;
 
 function autoclick() {
   score += autoclicks;
@@ -206,6 +206,15 @@ autoclickButton.addEventListener("click", buyAutoclick);
 //   });
 // };
 
+function reset (){
+  score = 0;
+  register = [];
+  autoclicks = 0;
+  updateDisplay();
+}
+
+const resetButton = document.getElementById("reset-app");
+resetButton.addEventListener("click", reset );
 
 // Event listeners for multipliers
 multiplier2.addEventListener("click", () => buyMultiplier(2));
