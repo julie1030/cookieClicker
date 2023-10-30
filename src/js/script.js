@@ -21,7 +21,7 @@ const bonusPrice = document.getElementById("bonusPrice");
 const autoclickPrice = document.getElementById("autoclickPrice");
 
 // Register to keep track of purchases
-const register = [];
+let register = [];
 
 // Rules for multipliers and their prices
 const rules = [
@@ -159,7 +159,7 @@ bonusButton.addEventListener("click", activateBonus);
 
 // Autoclick functionality
 let autoclicks = 0;
-let baseAutoclickCost = 10;
+const baseAutoclickCost = 10;
 
 function autoclick() {
   score += autoclicks;
@@ -207,9 +207,24 @@ window.onload = function() {
 };
 
 const rulesButton = document.getElementById("rules");
-rulesButton.addEventListener("click", window.onload);
+
+// Ajoutez un gestionnaire d'événements au bouton "Rules"
+rulesButton.addEventListener("click", function () {
+  // Réaffirmez la notification "myModals" en changeant la propriété display en "block"
+  const modal = document.getElementById("myModal");
+  modal.style.display = "block";
+});
 
 
+function reset (){
+  score = 0;
+  register = [];
+  autoclicks = 0;
+  updateDisplay();
+}
+
+const resetButton = document.getElementById("reset-app");
+resetButton.addEventListener("click", reset );
 
 // Event listeners for multipliers
 multiplier2.addEventListener("click", () => buyMultiplier(2));

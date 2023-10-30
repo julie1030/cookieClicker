@@ -13,7 +13,7 @@ Ce projet a été réalisé par une équipe de trois personnes :
 - [Julie Dussaussois](https://github.com/julie1030)
 - [Jessy Victor Tibou](https://github.com/Onyx3O6)
 - [Eliott De Trez](https://github.com/Eliott27)
-  
+
 ## Fonctionnalités
 
 - Les joueurs peuvent cliquer sur un cookie pour gagner des points.
@@ -22,11 +22,19 @@ Ce projet a été réalisé par une équipe de trois personnes :
 
 ## Démo
 
-[Insérez ici un lien vers une démo en direct du jeu si disponible.]
+[Version Live](https://julie1030.github.io/cookieClicker/)
 
 ## Captures d'écran
 
-[Insérez ici des captures d'écran du jeu pour donner un aperçu.]
+### Version Desktop
+
+![Version Desktop](<./src/assets/Cookie_Clicker_(live_desktop).png>)
+![Version Desktop rule](<./src/assets/Cookie_Clicker_(live_desktop_2).png>)
+
+### Version Mobile
+
+![Version Mobile](<./src/assets/Cookie_Clicker_(live_mobile).png>)
+![Version Mobile rule](<./src/assets/Cookie_Clicker_(live_mobile_2).png>)
 
 ## Technologies utilisées
 
