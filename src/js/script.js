@@ -98,7 +98,7 @@ buttonClick.addEventListener("click", increaseScore);
 // Bonus functionality
 let bonusActive = false;
 const bonusCost = 20; // Cost of the bonus
-const bonusDuration = 5000; // Duration of the bonus in milliseconds
+const bonusDuration = 30000; // Duration of the bonus in milliseconds
 
 function activateBonus() {
   if (!bonusActive) {
