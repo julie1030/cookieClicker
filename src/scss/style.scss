@@ -4,7 +4,14 @@
 
 body{
     background-color: rgb(218, 172, 89);
-    
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.navbar{
+    background-color: rgb(244, 173, 40);
+    border-radius: 15px;
 }
 .box1 {
     background-color: rgb(249, 215, 46);
@@ -12,8 +19,6 @@ body{
     border: black solid 3px;
     text-align:left;
     padding:10px;
-    margin:2rem;
-    height: 90vh;
 }
 
 h1 {
@@ -43,7 +48,7 @@ h1 {
     }
 
     &:active {
-        transform: scale(95%);
+        transform: scale(98%);
     }
 
 }
@@ -52,34 +57,105 @@ h1 {
     font-weight: 600;
 }
 
-.buttons{
-    color:blue;
-    background: transparent;
-    width:4rem;
+.actions {
+    display: flex;
+    flex-direction: column;
+    margin-top: 2rem;
+    border-top: solid thin gray;
+    border-bottom: solid thin gray;
+    padding: 1rem 0 0;
 
-    &:not(:disabled) {
-        border:solid rgb(250, 70, 70) 2px;
+    div {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
     }
 }
+
+.buttons{
+    height: 5rem;
+    background: transparent;
+    text-decoration: none;
+    font-weight: bold;	   
+    padding: 15px;
+    font-family: verdana;
+    font-size: 1em;
+    color: rgb(249,215,46);
+	background-color: rgb(218,172,89);
+    border-radius: 25px;
+    border: 4px solid rgb(249,215,46);
+    box-shadow: 3px 3px 12px #444444;
+    margin-right: 1rem;
+    margin-bottom: 1rem;
+
+    &:not(:disabled) {
+        background-color: #f70505;
+    }
+
+    &:hover {
+        padding: 17px;
+        border: 4px solid #FFFFFF;
+    }
+}
+
 .count{
     color:blue;
-    font-size: 60px;
+    font-size: 30px;
     font-weight: bold;
 
 }
-#bonusButton {
-    color:#f70505;
+
+.bleuGrasPetit{
     font-weight: bold;
-    border: solid black 2px;
-    background: transparent;
-    font: size 12px;
-    width: 5rem;
+    font-size: 10px;
+    color: blue;
 }
-#autoClickButton {
-    color:#f70505;
-    font-weight: bold;
-    border: solid black 2px;
-    background: transparent;
-    font: size 12px;
-    width: 5rem;
+
+
+ .modal {
+display: none;
+position: fixed;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+background-color: rgba(0, 0, 0, 0.5);
 }
+
+.modal-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color:  rgb(218, 172, 89);
+    padding: 20px;
+    border: 1px solid #ccc;
+    box-shadow: 2px 2px 10px black;
+}
+        
+.close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+@media (min-width: 576px) {
+    body{
+        height: 100vh;
+        min-height: 32rem;
+    }
+
+    .actions {
+        div {
+            display: flex;
+            flex-direction: row;
+
+            justify-content: center;
+        }
+    }
+ }
+
+        

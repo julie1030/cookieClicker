@@ -9,10 +9,16 @@ var buttonClick = document.getElementById("buttonClick");
 var scoreView = document.getElementById("scoreView");
 var multiplyView = document.getElementById("multiplierView");
 
+const multiplier2 = document.getElementById("multiplier2");
+const multiplier5 = document.getElementById("multiplier5");
+const bonusButton = document.getElementById("bonusButton");
+const autoClickButton = document.getElementById("autoClickButton");
+
 const price2 = document.getElementById("price2");
 const price5 = document.getElementById("price5");
-const price10 = document.getElementById("price10");
-const price20 = document.getElementById("price20");
+
+const bonusPrice = document.getElementById("bonusPrice");
+const autoclickPrice = document.getElementById("autoclickPrice");
 
 // Register to keep track of purchases
 const register = [];
@@ -21,8 +27,8 @@ const register = [];
 const rules = [
   { multi: 2, price: 30 },
   { multi: 5, price: 100 },
-  { multi: 10, price: 500 },
-  { multi: 20, price: 10000 },
+  { multi: "bonus", price: 1000 },
+  { multi: "autoclick", price: 10 },
 ];
 
 // Initial score
@@ -31,7 +37,12 @@ let score = 0;
 // all Functions
 function getIncrease() {
   let total = 1;
-  register.forEach(value => (total *= value));
+  register.forEach(value => {
+    if(typeof(value) === "number") {
+      return (total *= value)
+    }
+    return 2
+  });
   return total;
 }
 
@@ -49,13 +60,13 @@ function updateDisplay() {
 
   multiplier2.disabled = score < getPrice(2);
   multiplier5.disabled = score < getPrice(5);
-  multiplier10.disabled = score < getPrice(10);
-  multiplier20.disabled = score < getPrice(20);
+  bonusButton.disabled = score < getPrice("bonus");
+  autoClickButton.disabled = score < getPrice("autoclick");
 
   price2.textContent = getPrice(2);
   price5.textContent = getPrice(5);
-  price10.textContent = getPrice(10);
-  price20.textContent = getPrice(20);
+  bonusPrice.textContent = getPrice("bonus");
+  autoclickPrice.textContent = getPrice("autoclick");
 }
 
 var increaseScore = function () {
@@ -91,9 +102,9 @@ const bonusDuration = 5000; // Duration of the bonus in milliseconds
 
 function activateBonus() {
   if (!bonusActive) {
+    register.push("bonus");
+
     applyScoreBonus();
-  } else {
-    alert("Bonus is already active.");
   }
 }
 
@@ -103,8 +114,6 @@ function applyScoreBonus() {
     activateBonusEffect();
     setBonusTimeout();
     updateDisplay();
-  } else {
-    alert("Not enough score to activate the bonus.");
   }
 }
 
@@ -146,7 +155,6 @@ function setBonusTimeout() {
 }
 
 
-const bonusButton = document.getElementById("bonusButton");
 bonusButton.addEventListener("click", activateBonus);
 
 // Autoclick functionality
@@ -169,22 +177,39 @@ function buyAutoclick() {
   if (score >= currentAutoclickCost) {
     score -= currentAutoclickCost;
     autoclicks++;
+    register.push("autoclick");
     updateAutoclickCount();
     updateScore();
-    alert("You have purchased an autoclick.");
-  } else {
-    alert("Not enough score to buy an autoclick.");
   }
 }
+
 
 const autoclickButton = document.getElementById("autoClickButton");
 autoclickButton.addEventListener("click", buyAutoclick);
 
+// window.onload = function() {
+//   const modal = document.getElementById("myModal");
+//   const closeButton = document.querySelector(".close");
+
+//   modal.style.display = "block";
+
+//   // Fermer la fenêtre modale lorsque l'utilisateur clique sur la croix
+//   closeButton.addEventListener("click", function() {
+//     modal.style.display = "none";
+//   });
+
+//   // Fermer la fenêtre modale lorsque l'utilisateur clique en dehors de la fenêtre modale
+//   window.addEventListener("click", function(event) {
+//     if (event.target == modal) {
+//       modal.style.display = "none";
+//     }
+//   });
+// };
+
+
 // Event listeners for multipliers
 multiplier2.addEventListener("click", () => buyMultiplier(2));
 multiplier5.addEventListener("click", () => buyMultiplier(5));
-multiplier10.addEventListener("click", () => buyMultiplier(10));
-multiplier20.addEventListener("click", () => buyMultiplier(20));
 
 function updateAutoclickCount() {
   const autoclickCount = document.getElementById("autoclickCount");
