@@ -27,7 +27,7 @@ const register = [];
 const rules = [
   { multi: 2, price: 30 },
   { multi: 5, price: 100 },
-  { multi: "bonus", price: 100 },
+  { multi: "bonus", price: 1000 },
   { multi: "autoclick", price: 10 },
 ];
 

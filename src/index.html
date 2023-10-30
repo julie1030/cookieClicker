@@ -38,7 +38,7 @@
     <div class="container box1">
       <nav class="navbar">
         <div class="container-fluid">
-          <div class="bleuGrasPetit m-2"><em>Bed bugs $</em></div>
+          <div class="bleuGrasPetit m-2"><em>Bed bugs $ :</em></div>
           <!-- compteur de punaises/points -->
           <div class="count m-2" id="scoreView"></div>
           <p class="bleuGrasPetit m-2">Rules</p>
@@ -53,6 +53,10 @@
           <div class="col-md-10">
             <!-- Visibilité de l'état du multiplicateur  -->
             <div id="multiplierView" class="statement m-2"></div>
+            <!-- visibilité du nombre de fois où l'utilisateur a selectionné l'autoclic  -->
+            <div class="m-2" id="autoclickCount">Nombre d'autoclicks : 0</div>
+            <!-- visibilité du temps restant sur le timer pour le 200%-->
+            <span class="m-2">Timer bonus: <span id="timer">0</span> </span>
           </div>
         </div>
 
@@ -107,16 +111,6 @@
 
 
           </div>
-
-          <div>
-            <!-- visibilité du nombre de fois où l'utilisateur a selectionné l'autoclic  -->
-            <div class="m-2" id="autoclickCount">Nombre d'autoclicks : 0</div>
-
-            <!-- visibilité du temps restant sur le timer pour le 200%-->
-            <span class="m-2">Timer bonus: <span id="timer">0</span> </span>
-          </div>
-
-
 
         </div>
 
