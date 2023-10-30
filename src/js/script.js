@@ -187,24 +187,34 @@ function buyAutoclick() {
 const autoclickButton = document.getElementById("autoClickButton");
 autoclickButton.addEventListener("click", buyAutoclick);
 
-// window.onload = function() {
-//   const modal = document.getElementById("myModal");
-//   const closeButton = document.querySelector(".close");
-
-//   modal.style.display = "block";
-
-//   // Fermer la fenêtre modale lorsque l'utilisateur clique sur la croix
-//   closeButton.addEventListener("click", function() {
-//     modal.style.display = "none";
-//   });
-
-//   // Fermer la fenêtre modale lorsque l'utilisateur clique en dehors de la fenêtre modale
-//   window.addEventListener("click", function(event) {
-//     if (event.target == modal) {
-//       modal.style.display = "none";
-//     }
-//   });
-// };
+window.onload = function() {
+  const modal = document.getElementById("myModal");
+  const closeButton = document.querySelector(".close");
+  
+  modal.style.display = "block";
+  
+  // Fermer la fenêtre modale lorsque l'utilisateur clique sur la croix
+  closeButton.addEventListener("click", function() {
+  modal.style.display = "none";
+  });
+  
+  // Fermer la fenêtre modale lorsque l'utilisateur clique en dehors de la fenêtre modale
+  window.addEventListener("click", function(event) {
+  if (event.target == modal) {
+  modal.style.display = "none";
+  }
+  });
+  };
+  
+  const rulesButton = document.querySelector(".rules");
+  
+    // Ajoutez un gestionnaire d'événements au bouton "Rules"
+    rulesButton.addEventListener("click", function () {
+      // Réaffirmez la notification "myModals" en changeant la propriété display en "block"
+      const modal = document.getElementById("myModal");
+      modal.style.display = "block";
+    });
+  
 
 function reset (){
   score = 0;
