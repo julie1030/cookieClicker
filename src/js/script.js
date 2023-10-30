@@ -206,6 +206,10 @@ window.onload = function() {
   });
 };
 
+const rulesButton = document.getElementById("rules");
+rulesButton.addEventListener("click", window.onload);
+
+
 
 // Event listeners for multipliers
 multiplier2.addEventListener("click", () => buyMultiplier(2));
